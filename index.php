@@ -14,6 +14,18 @@ if (!$stories) {
     exit;
 }
 
+echo "<!DOCTYPE html>";
+echo "<html lang='en'>";
+echo "<head>";
+echo "<meta charset='UTF-8'>";
+echo "<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
+echo "<title>ABC News Headlines</title>";
+echo "<link rel='stylesheet' href='assets/style.css'>";
+echo "</head>";
+echo "<body>";
+
+echo "<div class='container'>";
+
 foreach ($stories->channel->item as $item) {
     $title = (string)$item->title;
     $link = (string)$item->link;
@@ -26,5 +38,10 @@ foreach ($stories->channel->item as $item) {
     echo "<p><a href=\"$link\">Read more</a></p>";
     echo "<hr>";
 }
+
+echo "</div>"; // close container
+
+echo "</body>";
+echo "</html>";
 
 ?>
